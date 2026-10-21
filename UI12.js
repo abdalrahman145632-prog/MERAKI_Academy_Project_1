@@ -1,10 +1,6 @@
 
 "use strict";
 
-// ========================================
-// 1. UI ELEMENTS
-// ========================================
-
 const screens = document.querySelectorAll(".screen");
 
 const playBtn = document.getElementById("playBtn");
@@ -48,9 +44,6 @@ const resetBtn = document.getElementById("reset");
 
 const modesElement = document.getElementById("modes");
 
-// ========================================
-// 2. UI STATE
-// ========================================
 
 let selectedMode = 1;
 
@@ -85,9 +78,6 @@ const winningLines = [
     [1, 5, 9]
 ];
 
-// ========================================
-// 3. SCREEN NAVIGATION
-// ========================================
 
 function showScreen(screenId) {
     screens.forEach(screen => {
