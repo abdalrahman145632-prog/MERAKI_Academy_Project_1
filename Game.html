@@ -1,0 +1,112 @@
+<!-- calss for js -->
+<!-- id for css  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>XO Game</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<!-- this function know by js to save element and change color in css -->
+<body data-mode="1">
+
+
+<header>
+  <div class="logo">X<b>O</b></div><span>the little rivalry</span>
+</header>
+<!-- page 1 -->
+<main id="about" class="screen show">
+  <section class="hero">
+    <h1>Three in a row.<br>Three ways to win.</h1>
+    <p class="lead">A tiny rivalry for two players on one screen. Pick a mode, take turns, and see who owns the board.</p>
+    <button class="btn main big" id="playBtn">Play</button>
+  </section>
+  <section class="about-modes">
+    <article>
+      <h3>Class</h3><p>The classic game. First to line up three wins.</p>
+    </article>
+    <article>
+      <h3>Prime</h3><p>Only three marks each. Place a fourth and your oldest one vanishes.</p>
+    </article>
+    <article>
+      <h3>Platinum</h3><p>Seven pieces sized 1 to 7. A bigger piece covers a smaller enemy piece, and your own pieces stack.</p>
+    </article>
+  </section>
+</main>
+
+<!-- page 2 -->
+<main id="names" class="screen">
+  <div class="panel name-card">
+    <p class="step" id="nameStep">Player 1 of 2</p>
+    <!-- this example and will change in js -->
+    <h2 id="nameTitle">What's your name?</h2>
+    <p class="sub" id="nameSub">You'll play X.</p>
+    <input id="nameInput" maxlength="16" autocomplete="off" placeholder="Type a name">
+    <p class="error" id="nameError"></p>
+    <div class="actions one">
+      <button class="btn" id="nameBack">Back</button>
+      <button class="btn main" id="nameNext">Next</button>
+    </div>
+  </div>
+</main>
+
+<!-- page 3 -->
+<main id="game" class="screen">
+  <h1 class="game-title">Pick a mode. Own the board.</h1>
+
+  <div class="modes" id="modes">
+    <button class="mode on" data-m="1">
+      <b>Class</b>
+    </button>
+    <button class="mode" data-m="2">
+      <b>Prime</b>
+    </button>
+    <button class="mode" data-m="3">
+      <b>Platinum</b>
+    </button>
+  </div>
+
+  <div class="layout">
+    <section>
+        <!-- player info how turn and how many time he win -->
+      <div class="players">
+        <div class="pl" data-p="X" id="pX"><span class="pi" id="iX"></span><div><span id="nX"></span><small id="wX"></small></div></div>
+        <div class="pl" data-p="O" id="pO"><span class="pi" id="iO"></span><div><span id="nO"></span><small id="wO"></small></div></div>
+      </div>
+      <p class="status"><span id="status"></span><span id="round"></span></p>
+      <!-- borad and we make it in js -->
+      <div class="board" id="board"></div>
+      <!-- borad for platinm mood -->
+      <div class="tray" id="tray"></div>
+      <!-- three button for restart & next round & finish -->
+      <div class="actions">
+        <button class="btn main" id="next">Next round</button>
+        <button class="btn" id="restart">Restart round</button>
+        <button class="btn finish" id="finishBtn">Finish game</button>
+      </div>
+      <!-- for platinum if player dont chose a item Pick one of your pieces first.in small  -->
+      <p class="hint" id="hint"></p>
+    </section>
+    <!--for the score side  -->
+    <!-- aside this for side funciton for exmple -->
+    <aside class="side">
+      <div class="panel"><h3>The score</h3>
+        <div class="score">
+          <div><b id="sx">0</b><small id="snx">X</small></div>
+          <div><b id="sd">0</b><small>Draws</small></div>
+          <div><b id="so">0</b><small id="sno">O</small></div>
+        </div>
+        <!-- to reset the scoer -->
+        <button class="link" id="reset">Reset score</button>
+      </div>
+      <!-- for hwo win last round -->
+      <div class="panel"><h3>Last rounds</h3><ul id="hist"></ul></div>
+    </aside>
+  </div>
+</main>
+
+<script src="X-O--Game.js"></script>
+<script src="UI12.js"></script>
+</body>
+</html>
